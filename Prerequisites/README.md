@@ -3,16 +3,22 @@
 - Open PowerShell session as Administrator
 #### Install other prerequisites and tools 
 - Create a working directory
-	`md c:\projects`
-	`Set-Location c:\projects`
+	```PowerShell
+	md c:\projects
+	Set-Location c:\projects
+	```
 
 - Download packages.config from repository
 
-	`Invoke-WebRequest -Uri https://raw.githubusercontent.com/Sitecore/Sitecore.HabitatHome.Utilities/master/Prerequisites/packages.config | set-content packages.config` 
+	```PowerShell
+	Invoke-WebRequest -Uri https://raw.githubusercontent.com/Sitecore/Sitecore.HabitatHome.Utilities/master/Prerequisites/packages.config -UseBasicParsing | set-content packages.config
+	```
 
 - Install Chocolatey
 
-    `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+    ```PowerShell
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    ```
 - Review packages.config to ensure it matches what you'd like to install
 - Install prerequisites and tools using chocolatey
     `choco install packages.config -y`
@@ -32,7 +38,9 @@
 
 - Clone the [Sitecore.HabitatHome.Utilities](https://github.com/Sitecore/Sitecore.HabitatHome.Utilities/) repository
 
-	`git clone https://github.com/Sitecore/Sitecore.HabitatHome.Utilities.git`
+	```PowerShell
+	git clone https://github.com/Sitecore/Sitecore.HabitatHome.Utilities.git
+	```
 
 See the [README.md](../XP/install/README.md) in the XP/install folder
 
